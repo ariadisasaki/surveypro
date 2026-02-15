@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survey Pro</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css"/>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Dashboard Sidebar -->
+<div class="sidebar">
+
+<h2>📊 Dashboard</h2>
+
+<div id="datetime"></div>
+
+<p><strong>Koordinat (GPS) :</strong><br>
+<span id="coords">-</span></p>
+
+<p><strong>Ketinggian (GPS) :</strong><br>
+<span id="altitude">-</span></p>
+
+<p><strong>Lokasi (GPS) :</strong><br>
+<span id="lokasi">-</span></p>
+
+<hr>
+
+<p>Luas Polygon : <span id="area">-</span></p>
+<p>Keliling Polygon : <span id="perimeter">-</span></p>
+
+<input type="text" id="searchCoord" placeholder="-8.65217,116.52885">
+<button onclick="searchCoordinate()">Cari Koordinat</button>
+
+<hr>
+
+<button onclick="exportJPG()">Export JPG</button>
+<button onclick="exportKML()">Export KML</button>
+<button onclick="exportKMZ()">Export KMZ</button>
+<button onclick="exportSHP()">Export SHP</button>
+
+<hr>
+
+<button class="close-btn" onclick="toggleDashboard()">✕ Tutup</button>
+
+<hr>
+
+<div class="dev-footer">
+Developed by 
+<a href="https://www.facebook.com/share/1C8bjd7Xoh" target="_blank">
+Ariadi Forester
+</a>
+</div>
+
+</div>
+
+<!-- Tombol Show Dashboard tepi layar -->
+<button id="show-dashboard-btn">Tampilkan Dashboard</br> Lihat Luas Lahan</button>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://unpkg.com/tokml/tokml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/shp-write@0.3.2/shpwrite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geometryutil/0.9.3/leaflet.geometryutil.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
